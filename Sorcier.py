@@ -7,7 +7,9 @@ class Sorcier:
 
     def attaquer(self,monstre):
         sorcier_jet=random.randint(1,12)*self.niveau
-        monstre_jet=random.randint(1,12)*monstre.niveau
+        monstre_jet=monstre.defendre()
+        print(f"vous avez fait {sorcier_jet} et le monstre a fait {monstre_jet}")
+
 
         if sorcier_jet >= monstre_jet:
             return True

@@ -1,5 +1,5 @@
 import Sorcier
-from Monstres import Monstre
+from Monstres import Monstre,Necromancien,Dragon
 import random
 
 
@@ -8,7 +8,7 @@ def main():
 
 
 def boucle_de_jeux():
-    monstres=[Monstre('Zombi',5),Monstre('Necromancien',12),Monstre('Dragon',80)]
+    monstres=[Monstre('Zombi',5),Necromancien(3,'Necromancien',12),Dragon('Dragon',80)]
     sorcier=Sorcier.Sorcier('Gandalf',30)
     while True:
         monstre=random.choice(monstres)
@@ -29,9 +29,10 @@ def boucle_de_jeux():
         elif action=='f':
             print("vous fuiez")
         elif action=='r':
-            print("vous observer les monstres autour de vous")
+            print("--------------------MONSTRES encore à tuer-------------\n")
             for mon in monstres:
-                print(f"il ya un {mon.nom} de niveau {mon.niveau}")
+                print(f"{mon.nom} de niveau {mon.niveau}")
+            print("\n----------------fin de la liste--------------------")
         else:
             print("on quitte le jeu")
             break
