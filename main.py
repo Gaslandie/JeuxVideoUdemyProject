@@ -29,7 +29,9 @@ def boucle_de_jeux():
         elif action=='f':
             print("vous fuiez")
         elif action=='r':
-            print("vous rechercher")
+            print("vous observer les monstres autour de vous")
+            for mon in monstres:
+                print(f"il ya un {mon.nom} de niveau {mon.niveau}")
         else:
             print("on quitte le jeu")
             break
